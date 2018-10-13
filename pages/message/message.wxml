@@ -1,0 +1,65 @@
+<!-- <view class='top'> </view> -->
+
+<scroll-view class='middle' scroll-y scroll-with-animation scroll-into-view="{{'s'+toindex}}">
+
+  <view class='item_div' wx:for="{{all}}" >
+  <!-- wx:for="{{message}}" -->
+ 
+    <block wx:if="{{item.judge=='me'}}">
+       <!-- 右边-->
+      <view class='item_right' data-index="{{index}}" id="{{'s'+index}}" bindtap='btn'>
+        <view class='icon_part_right'>
+          <image class='icon' src="../../photo/boy_icon.png"></image>
+        </view>
+        <view class='text_part_right'>
+          <text class='text_me_right' selectable='true'>{{item.message}}</text>
+         </view>
+      </view>     
+      
+    </block>
+     
+    <block wx:else>
+        <!-- 左边 -->
+        <view class='item_left' data-index="{{index}}" id="{{'s'+index}}" bindtap='btn'>
+          <view class='icon_part_left'>
+            <image class='icon' src="../../photo/girl_icon.png"></image>
+          </view>
+          <view class='text_part_left' style='background="../../photo/girl_icon.png"'>
+            <text class='text_me_left' selectable='true'>{{item.message}}</text>
+            <block wx:if="{{item.message=='甜儿姐姐的自拍……'}}">
+            <image src="{{all[index].time}}" class='image_left' mode='widthFix'></image>
+            </block>
+            <block wx:if="{{item.message=='甜儿姐姐的小视频……'}}">
+              <video src="http://www.yexuan.site:11111/WWW/video/tianer.mp4" class='video_left' controls ></video>
+            </block>
+          </view>
+        </view>
+    </block>
+    
+  </view>
+
+</scroll-view>
+
+<view class='bottom'>
+  <view class='input'>
+    <input class='text' placeholder="输入内容" value='{{msg}}' bindinput='send_text' bindfocus='send_color' bindblur='send_color_1' confirm-type='send'></input> 
+    <button class='send' type='text' style='background-color: {{send}}' bindtap='send'>发送</button>
+  </view>
+  <view class='choose'>
+    <view class='part'>
+      <image class='choose_image' src='../../photo/record.png'></image>
+    </view>
+    <view class='part'>
+      <image class='choose_image' src='../../photo/photo.png'></image>
+    </view>
+    <view class='part'>
+      <image class='choose_image' src='../../photo/camera.png'></image>
+    </view>
+    <view class='part'>
+      <image class='choose_image' src='../../photo/emoji.png'></image>
+    </view>
+    <view class='part'>
+      <image class='choose_image' src='../../photo/jiahao.png'></image>
+    </view>
+  </view>
+</view>
