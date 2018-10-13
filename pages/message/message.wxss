@@ -1,11 +1,9 @@
-
 .bottom{
   position:fixed;
   bottom: 0;
   width: 100%;
   height: 12%;
   background-color: #ffffff;
-
 }
 .middle{
   height: 1060rpx;
@@ -17,7 +15,6 @@
   height: fit-content;
   background-color: white;
 }
-
 .item_left{
   width: 80%;
   float: left;
@@ -39,14 +36,6 @@
   height: fit-content;
   background: bisque;
   border-radius: 6rpx;
-}
-.image_left{
-  float: left;
-  background: black
-}
-.video_left{
-  float: left;
-  background: black
 }
 .text_part_left{
   width: 80%;

@@ -26,12 +26,6 @@
           </view>
           <view class='text_part_left' style='background="../../photo/girl_icon.png"'>
             <text class='text_me_left' selectable='true'>{{item.message}}</text>
-            <block wx:if="{{item.message=='甜儿姐姐的自拍……'}}">
-            <image src="{{all[index].time}}" class='image_left' mode='widthFix'></image>
-            </block>
-            <block wx:if="{{item.message=='甜儿姐姐的小视频……'}}">
-              <video src="http://www.yexuan.site:11111/WWW/video/tianer.mp4" class='video_left' controls ></video>
-            </block>
           </view>
         </view>
     </block>

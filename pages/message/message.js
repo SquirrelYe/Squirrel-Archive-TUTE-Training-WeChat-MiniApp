@@ -58,48 +58,21 @@ Page({
     var msg=data;
     var that = this;
     var str = this.data.msg;
-    if (str.search("自拍") != -1){
-      if (that.data.img_index <3) {
-        if (that.data.img_index == 0) {
-          that.acceptCallBack("甜儿姐姐的自拍……", "../../photo/tianer.jpg");
-        }
-        if (that.data.img_index == 1) {
-          that.acceptCallBack("甜儿姐姐的自拍……", "../../photo/tianer2.jpg");
-        }
-        if (that.data.img_index == 2) {
-          that.acceptCallBack("甜儿姐姐的自拍……", "../../photo/tianer3.jpg");
-        }
-        that.setData({
-          img_index: that.data.img_index + 1
-        })
+    wx.request({
+      //连接后台服务器 
+      url: `${app.globalData.url}/tuling_api`,
+      data: {
+        judge: '1',
+        data: msg
+      },
+      success: function (res) {
         wx.hideLoading();
-        }else{
-        that.acceptCallBack("没有更多啦……","");
-        wx.hideLoading();
-        }
-    } 
-    else if (str.search("视频") != -1) {
-      that.acceptCallBack("甜儿姐姐的小视频……","");
-      wx.hideLoading();
-    }
-    else{
-      wx.request({
-        //连接后台服务器 
-        url: `${app.globalData.url}/tuling_api`,
-        data: {
-          judge: '1',
-          data: msg
-        },
-        success: function (res) {
-          wx.hideLoading();
-          that.acceptCallBack(res.data.results[0].values.text,"");
-        },
-        fail: function (res) {
-          console.log(res.data);
-        }
-      })
-    }
-    
+        that.acceptCallBack(res.data.results[0].values.text,"");
+      },
+      fail: function (res) {
+        console.log(res.data);
+      }
+    })    
   },
 
   acceptCallBack:function(acceptMsg,img_index){
