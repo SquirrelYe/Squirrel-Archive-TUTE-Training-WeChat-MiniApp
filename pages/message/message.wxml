@@ -22,9 +22,9 @@
         <!-- 左边 -->
         <view class='item_left' data-index="{{index}}" id="{{'s'+index}}" bindtap='btn'>
           <view class='icon_part_left'>
-            <image class='icon' src="../../photo/girl_icon.png"></image>
+            <image class='icon' src="../../photo/boy_icon.png"></image>
           </view>
-          <view class='text_part_left' style='background="../../photo/girl_icon.png"'>
+          <view class='text_part_left'>
             <text class='text_me_left' selectable='true'>{{item.message}}</text>
           </view>
         </view>

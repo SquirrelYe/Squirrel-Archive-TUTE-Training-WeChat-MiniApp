@@ -7,7 +7,7 @@ Page({
     //三则通讯信息 
     time: [],
     message: [],
-    all: [{ judge:'tuling',message: '我是你们的甜儿姐姐，欢迎撩哦~', time:'2018-10-11'}],
+    all: [{ judge:'tuling',message: '我是你们的小泫泫，欢迎撩哦~', time:'2018-10-11'}],
     send: '#e6e6e6',
 
     msg: '',
@@ -44,7 +44,7 @@ Page({
           }
       },
       "userInfo": {
-          "apiKey": "43968d51d9ab4294a7364bd8c578ef0f",
+          "apiKey": "9b5bb51992da406fb4a90b3602a44a42",
           "userId": "333594"
       }
     }
